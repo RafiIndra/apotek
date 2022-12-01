@@ -70,8 +70,7 @@ class Example extends CI_Controller
 			$this->template->render();
 		}
 		else{
-			$this->session->set_flashdata('msg', 'Wrong Login Information');
-			$this->load->view("tes/login", $data, true);
+			$this->load->view("tes/login");
 		}
 	}
 
