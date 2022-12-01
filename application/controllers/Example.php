@@ -49,6 +49,12 @@ class Example extends CI_Controller
 		$this->template->render();
 	}
 
+	function logout() {
+		unset($_COOKIE['username']);
+		setcookie('username', '', time() - 3600, '/');
+		$this->load->view("tes/login");
+		}
+
 	function validateLogin() {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
