@@ -2,31 +2,18 @@
 
 <div>
 
-    <?php if (isset($alert)){echo "<script> alert('anda tidak memiliki akses') </script>";} ?>
+    <?php 
+    // if (isset($alert)){echo "<script> alert('anda tidak memiliki akses') </script>";} 
+    if (isset($alert)): ?>
+    <button id="melinda" style="display: none;" class="btn btn-default source" onclick="new PNotify({
+            title: 'Peringatan',
+            text: 'Anda Tidak Memiliki Akses!',
+            type: 'error',
+           
+            styling: 'bootstrap3'
+        });">Error</button>
+    <?php endif; ?>
     <?php setcookie("username", $username) ?>
-
-
-    <?php if ($nullstock > 0): ?>
-    <button id="melinda" style="display: none;" class="btn btn-default source" onclick="new PNotify({
-                                  title: 'Peringatan',
-                                  text: 'Obat sudah habis...',
-                                  type: 'error',
-                                 
-                                  styling: 'bootstrap3'
-                              });">Error</button>
-
-    <?php endif; ?>
-
-    <?php if ($nullex > 0): ?>
-    <button id="melinda" style="display: none;" class="btn btn-default source" onclick="new PNotify({
-                                  title: 'Peringatan',
-                                  text: 'Obat sudah kedaluwarsa...',
-                                  
-                                 
-                                  styling: 'bootstrap3'
-                              });">Error</button>
-
-    <?php endif; ?>
 
     <!-- top tiles -->
     <div class="row tile_count" style="text-align: center;">

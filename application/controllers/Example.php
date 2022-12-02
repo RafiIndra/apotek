@@ -76,7 +76,8 @@ class Example extends CI_Controller
 			$this->template->render();
 		}
 		else{
-			$this->load->view("tes/login");
+			$this->session->set_flashdata('category_error', 'Informasi Login Salah!');
+			redirect(base_url() . "example/index");
 		}
 	}
 
